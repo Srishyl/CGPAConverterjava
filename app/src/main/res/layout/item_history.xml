@@ -2,28 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="12dp"
     android:orientation="horizontal"
-    android:padding="8dp"
-    android:background="?android:attr/selectableItemBackground">
+    android:gravity="center_vertical"
+    android:background="@drawable/history_card_bg">
 
-    <TextView
-        android:id="@+id/tvCgpa"
+    <!-- Left Icon -->
+    <ImageView
+        android:id="@+id/iconHistory"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_percentage"
+        android:layout_marginEnd="12dp" />
+
+    <!-- Text Container -->
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="CGPA: 8.5" />
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/tvPercentage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Percentage: 80.75%" />
+        <TextView
+            android:id="@+id/tvCgpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGPA: 8.5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#0A4DA2" />
 
+        <TextView
+            android:id="@+id/tvPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Percentage: 80.75%"
+            android:textSize="15sp"
+            android:textColor="#4A6BA2"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <!-- Date -->
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10/29/2025" />
+        android:text="10/29/2025"
+        android:textSize="14sp"
+        android:textColor="#7A92B2" />
 
 </LinearLayout>

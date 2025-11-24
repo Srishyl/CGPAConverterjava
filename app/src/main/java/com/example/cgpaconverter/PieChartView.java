@@ -37,7 +37,7 @@ public class PieChartView extends View {
 
     public void setPercentage(double percent) {
         percentage = (float) Math.max(0, Math.min(100, percent));
-        invalidate();
+        invalidate(); // redraw chart
     }
 
     @Override
@@ -46,27 +46,30 @@ public class PieChartView extends View {
 
         float centerX = getWidth() / 2f;
         float centerY = getHeight() / 2f;
-        float radius = (Math.min(getWidth(), getHeight()) / 2f) * 0.8f;
+        float radius = (Math.min(getWidth(), getHeight()) / 2f) * 0.82f;
 
+        // Set chart area
         rect.set(centerX - radius, centerY - radius,
                 centerX + radius, centerY + radius);
 
-        paint.setColor(Color.LTGRAY);
+        // Background circle (light blue)
+        paint.setColor(Color.parseColor("#D6E8FF"));
         canvas.drawArc(rect, 0, 360, true, paint);
 
-        paint.setColor(Color.GREEN);
-        float sweep = (percentage / 100f) * 360;
-        canvas.drawArc(rect, -90, sweep, true, paint);
+        // Foreground arc (blue)
+        paint.setColor(Color.parseColor("#1A73E8"));
+        float sweepAngle = (percentage / 100f) * 360;
+        canvas.drawArc(rect, -90, sweepAngle, true, paint);
 
-        paint.setColor(Color.BLACK);
-        paint.setTextSize(48f);
+        // Text (dark blue)
+        paint.setColor(Color.parseColor("black"));
+        paint.setTextSize(52f);
         paint.setTextAlign(Paint.Align.CENTER);
 
         String text = ((int) percentage) + "%";
         Rect bounds = new Rect();
         paint.getTextBounds(text, 0, text.length(), bounds);
-        int textHeight = bounds.height();
 
-        canvas.drawText(text, centerX, centerY + textHeight / 2f, paint);
+        canvas.drawText(text, centerX, centerY + bounds.height() / 2f, paint);
     }
 }

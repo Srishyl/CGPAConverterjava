@@ -1,69 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#f4f4f4">
+    android:background="#F0F6FF"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CGPA to Percentage Converter"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <EditText
-        android:id="@+id/etCgpa"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter CGPA (0-10)"
-        android:inputType="numberDecimal"
-        android:maxLength="4"
-        android:layout_marginBottom="16dp" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnConvert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Convert"
-        android:layout_marginBottom="16dp" />
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="10dp">
 
-    <TextView
-        android:id="@+id/tvResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your Percentage: --"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textColor="#28a745"
-        android:layout_marginBottom="16dp"
-        android:visibility="gone" />
+            <TextView
+                android:layout_width="349dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/alata"
+                android:text="Know Your Percentage"
+                android:textAlignment="center"
+                android:textColor="#0A4DA2"
+                android:textColorLink="#1565C0"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <com.example.cgpaconverter.PieChartView
-        android:id="@+id/pieChart"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="32dp"
-        android:visibility="gone" />
+        <!-- Input Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="8dp"
+            android:padding="22dp"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:radius="18dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Conversion History"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+            <!-- Input Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Your CGPA"
+                android:textSize="18sp"
+                android:textColor="#0A4DA2"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHistory"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="vertical" />
+            <!-- Input Field -->
+            <EditText
+                android:id="@+id/etCgpa"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="0.0 - 10.0"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="#0A4DA2"
+                android:textColorHint="#7A92B2"/>
 
-</LinearLayout>
+            <!-- Convert Button -->
+            <Button
+                android:id="@+id/btnConvert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calculate Percentage"
+                android:layout_marginTop="18dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0A4DA2"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+        <!-- Result Box -->
+        <LinearLayout
+            android:id="@+id/resultBox"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:radius="18dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_success"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Percentage: --"
+                android:textStyle="bold"
+                android:textColor="#0A4DA2"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <!-- Chart -->
+        <com.example.cgpaconverter.PieChartView
+            android:id="@+id/pieChart"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp" />
+
+        <!-- History Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conversion History"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#0A4DA2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <!-- Recycler -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true" />
+
+    </LinearLayout>
+
+</ScrollView>
