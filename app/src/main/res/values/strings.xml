@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CGPA Converter</string>
+    <string name="default_web_client_id">535476572656-0gct8dd0ukfk3gg0354553ho6dgh41q8.apps.googleusercontent.com</string>
 </resources>
