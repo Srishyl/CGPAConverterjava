@@ -18,16 +18,26 @@
             android:padding="10dp">
 
             <TextView
-                android:layout_width="349dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/alata"
                 android:text="Know Your Percentage"
                 android:textAlignment="center"
                 android:textColor="#0A4DA2"
-                android:textColorLink="#1565C0"
                 android:textSize="26sp"
                 android:textStyle="bold" />
+
+            <!-- Logout Button -->
+            <ImageButton
+                android:id="@+id/btnLogout"
+                android:layout_width="51dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:contentDescription="Logout"
+                android:padding="8dp"
+                android:src="@drawable/ic_logout" />
+
         </LinearLayout>
 
         <!-- Input Card -->
@@ -42,7 +52,6 @@
             android:layout_marginBottom="20dp"
             android:radius="18dp">
 
-            <!-- Input Label -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +61,6 @@
                 android:layout_marginBottom="10dp"
                 android:textStyle="bold"/>
 
-            <!-- Input Field -->
             <EditText
                 android:id="@+id/etCgpa"
                 android:layout_width="match_parent"
@@ -64,7 +72,6 @@
                 android:textColor="#0A4DA2"
                 android:textColorHint="#7A92B2"/>
 
-            <!-- Convert Button -->
             <Button
                 android:id="@+id/btnConvert"
                 android:layout_width="match_parent"
@@ -108,7 +115,6 @@
                 android:textSize="22sp"/>
         </LinearLayout>
 
-        <!-- Chart -->
         <com.example.cgpaconverter.PieChartView
             android:id="@+id/pieChart"
             android:layout_width="240dp"
@@ -118,7 +124,6 @@
             android:layout_marginBottom="20dp"
             android:padding="10dp" />
 
-        <!-- History Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -127,7 +132,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_history" />
 
             <TextView
@@ -140,7 +145,6 @@
                 android:layout_marginStart="10dp" />
         </LinearLayout>
 
-        <!-- Recycler -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHistory"
             android:layout_width="match_parent"

@@ -10,10 +10,10 @@
     <!-- Left Icon -->
     <ImageView
         android:id="@+id/iconHistory"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:src="@drawable/ic_percentage"
-        android:layout_marginEnd="12dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_percentage" />
 
     <!-- Text Container -->
     <LinearLayout
