@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#0A4DA2">
+
+    <!-- App Logo -->
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CGPA to Percentage"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert your CGPA instantly\nwith smart visual charts!"
+        android:textSize="16sp"
+        android:textColor="#D6E3F8"
+        android:gravity="center"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Google Sign-in Button -->
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btnGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

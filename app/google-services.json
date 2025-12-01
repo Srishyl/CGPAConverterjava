@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "535476572656",
+    "project_id": "cgpa-3182d",
+    "storage_bucket": "cgpa-3182d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535476572656:android:8aee8b822c6f89a724cd35",
+        "android_client_info": {
+          "package_name": "com.example.cgpaconverter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535476572656-0gct8dd0ukfk3gg0354553ho6dgh41q8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqlIhFHoMbU6GXDNhltPIxLBSILG1TJu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535476572656-0gct8dd0ukfk3gg0354553ho6dgh41q8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
